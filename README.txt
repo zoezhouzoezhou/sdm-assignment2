@@ -1,3 +1,9 @@
+Preparation:
+	1, Please have your virtualbox linux operating system ready, or a standalone Unix/Linux,MacOSX operating system ready;
+	   OR you are familiar with any git related tools on Windows, go ahead with it. << Mao is not familiar with Windows platform, so I can not help you with this case. 
+	2, Please install ruby 2.2.0 and rails 4.2.x on your local system, because Heroku requires/supports this version very well. 
+	3, Please have postgreSQL database ready on your local system, because Heroku uses PostgreSQL as the backend database;
+	   Notice: better not rely on sqlLite3 for local development, because migrating from sqlLite3 to PostgreSQL might cause some problem. 
 
 Using git/github requires us to have git utility installed on our local operating system. Also, we need have a github.com account to push our code to and pull down other codes from github.com 
 
