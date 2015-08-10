@@ -1,4 +1,3 @@
-For Software Architecture, I would like us to cooperate with the help of github and git to manager our source codes for our SAAS architecture project. 
 
 Using git/github requires us to have git utility installed on our local operating system. Also, we need have a github.com account to push our code to and pull down other codes from github.com 
 
