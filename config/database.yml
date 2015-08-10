@@ -23,66 +23,24 @@ default: &default
 
 development:
   <<: *default
-  # database: ruby-getting-started_development
-  database: mao_development
-
-  # The specified database role being used to connect to postgres.
-  # To create additional roles in postgres see `$ createuser --help`.
-  # When left blank, postgres will use the default role. This is
-  # the same name as the operating system user that initialized the database.
-  #username: ruby-getting-started
+  # create a local PostgreSQL database, and update the following entry to your name
+  database: serler_dev_db
   username: maochuanli
-
-  # The password associated with the postgres role (username).
+  # by default, there is no password for the database account, but in case you have, update this entry
   #password:
 
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
   host: localhost
-
-  # The TCP port the server listens on. Defaults to 5432.
-  # If your server runs on a different port number, change accordingly.
   port: 5432
 
-  # Schema search path. The server defaults to $user,public
-  #schema_search_path: myapp,sharedapp,public
-
-  # Minimum log levels, in increasing order:
-  #   debug5, debug4, debug3, debug2, debug1,
-  #   log, notice, warning, error, fatal, and panic
-  # Defaults to warning.
-  #min_messages: notice
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ruby-getting-started_test
+  database: serler_test_db
 
-# As with config/secrets.yml, you never want to store sensitive information,
-# like your database password, in your source code. If your source code is
-# ever seen by anyone, they now have access to your database.
-#
-# Instead, provide the password as a unix environment variable when you boot
-# the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full rundown on how to provide these environment variables in a
-# production deployment.
-#
-# On Heroku and other platform providers, you may have a full connection URL
-# available as an environment variable. For example:
-#
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
-#
-# You can use this database configuration with:
-#
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
+  # before using the following environment variable, set it on heroku command line: 
+  # heroku config:set DATABASE_URL=postgres://xvmfnuybptqfiv:x1a6JSbvzFr56u7-GjHo9_Hqpg@ec2-54-204-3-188.compute-1.amazonaws.com:5432/d93fe......
+  # this can also be set from the heroku web page: Application -> Settings -> Config Variables -> EDIT
+  # the database URL could be retrieved from: Dashboard -> Databases -> <Your DB> -> URL -> Show
   url: <%= ENV['DATABASE_URL'] %>
-  #database: ruby-getting-started_production
-  #username: ruby-getting-started
-  #password: <%= ENV['RUBY-GETTING-STARTED_DATABASE_PASSWORD'] %>
+
