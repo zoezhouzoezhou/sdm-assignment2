@@ -21,6 +21,7 @@ The two files are available under the git repository. After installation, run th
     6, update the ~/.gitconfig file with your name and email address
 
 For each one of us, I would like us to work independently on each branch, so please execute following commands:
+    0, git checkout alpha # for alpha team, or <beta> for beta team, or <gamma> for gamma team
     1, git checkout -b bb/<name>, or aa/<name> or gg/<name> depending your team; a->alpha, b->beta, g->gamma
     2, git push --set-upstream origin bb/<name>, aa/<name> or gg/<name>
 
