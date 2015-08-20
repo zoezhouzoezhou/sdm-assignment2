@@ -4,4 +4,4 @@ rvm:
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
 before_script:
-  - psql -c 'create database serlerp_test_db' -U postgres
+  - psql -c 'create database serler_test_db' -U postgres
