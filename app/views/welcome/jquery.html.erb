@@ -1,0 +1,26 @@
+<script>
+  alert( $().jquery );
+  console.log("just logging with chrome");
+
+$(function() {
+    $( "input[type=submit], a, button" )
+      .button()
+      .click(function( event ) {
+        event.preventDefault();
+      });
+  });
+
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
+
+
+<h1>Welcome#jquery</h1>
+<p>Find me in app/views/welcome/jquery.html.erb</p>
+
+<p>Date: <input type="text" id="datepicker"></p>
+
+<button>A button element</button>
+ 
+<input type="submit" value="A submit button">

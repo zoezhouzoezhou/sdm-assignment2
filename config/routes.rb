@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/jquery'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
