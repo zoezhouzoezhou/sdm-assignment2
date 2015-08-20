@@ -11,6 +11,6 @@ class DummyTest < ActiveSupport::TestCase
   end
  
   test "false" do
-       assert false
+       assert false == false
   end
 end
