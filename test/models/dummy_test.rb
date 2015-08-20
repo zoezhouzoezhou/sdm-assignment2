@@ -9,4 +9,8 @@ class DummyTest < ActiveSupport::TestCase
   test "another truth" do
        assert 1==1
   end
+ 
+  test "false" do
+       assert false
+  end
 end
