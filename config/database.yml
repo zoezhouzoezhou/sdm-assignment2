@@ -1,36 +1,22 @@
-# PostgreSQL. Versions 8.2 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On OS X with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On OS X with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem 'pg'
-#
+# Make sure the following 2 databases are created owned by the user: serler
+# > sudo -s -u  postgres
+# > psql
+# > postgres=# CREATE USER serler WITH PASSWORD 'serler';
+# > postgres=# CREATE DATABASE serler_dev_db OWNER serler;
+# > postgres=# CREATE DATABASE serler_test_db OWNER serler;
+
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: serler
+  password: serler
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
-  # create a local PostgreSQL database, and update the following entry to your name
   database: serler_dev_db
-  username: maochuanli
-  # by default, there is no password for the database account, but in case you have, update this entry
-  #password:
-
-  host: localhost
-  port: 5432
 
 test:
   <<: *default
