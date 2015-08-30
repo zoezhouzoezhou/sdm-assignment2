@@ -3,7 +3,8 @@ cache: bundler
 rvm:
   - 2.2.0
 before_script:
-  - psql -c "CREATE USER serler WITH PASSWORD 'serler';" -U postgres
+  - psql -c "CREATE USER serler WITH CREATEUSER PASSWORD 'serler';" -U postgres
+  - psql -c "ALTER USER serler CREATEDB;" -U postgres
   - psql -c 'create database serler_test_db OWNER serler' -U postgres
 script:
   - RAILS_ENV=test bundle exec rake db:migrate test
