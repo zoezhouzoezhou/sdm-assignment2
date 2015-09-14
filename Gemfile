@@ -45,3 +45,4 @@ gem 'haml'
 # gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap'
+gem 'devise'
