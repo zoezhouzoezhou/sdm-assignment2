@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionController::TestCase
-  test "should get index" do
+  include Devise::TestHelpers
+  
+  test "should NOT get index" do
     get :index
-    assert_response :success
+    assert_response :redirect
   end
 
 end
