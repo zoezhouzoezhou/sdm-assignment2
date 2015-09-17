@@ -9,7 +9,9 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
-  - rails s  # start a Web server
+  - echo $PATH
+  - which rails
+  - bundle exec rails server -d -e test  # start a Web server
   - sleep 3 # give Web server some time to bind to sockets, etc
   - curl http://localhost:3000
 script:
