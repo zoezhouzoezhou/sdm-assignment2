@@ -7,4 +7,9 @@ before_script:
   - psql -c "ALTER USER serler CREATEDB;" -U postgres
   - psql -c 'create database serler_test_db OWNER serler' -U postgres
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate test
+  - RAILS_ENV=test rake db:migrate
+  - RAILS_ENV=test rake db:seed
+  - RAILS_ENV=test rake	test
+  - RAILS_ENV=test rake spec
+  - RAILS_ENV=test rake	cucumber
+  

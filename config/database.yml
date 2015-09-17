@@ -18,7 +18,7 @@ development:
   <<: *default
   database: serler_dev_db
 
-test:
+test: &test
   <<: *default
   database: serler_test_db
 
@@ -30,3 +30,6 @@ production:
   # the database URL could be retrieved from: Dashboard -> Databases -> <Your DB> -> URL -> Show
   url: <%= ENV['DATABASE_URL'] %>
 
+
+cucumber:
+  <<: *test
