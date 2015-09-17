@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search_fields/list'
+
   devise_for :users
   get 'welcome/jquery'
 

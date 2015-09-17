@@ -36,7 +36,7 @@ gem 'spring',        group: :development
 
 gem 'puma'
 
-gem 'haml'
+# gem 'haml'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -46,3 +46,4 @@ gem 'haml'
 
 gem 'bootstrap'
 gem 'devise'
+gem 'factory_girl_rails'
