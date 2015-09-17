@@ -6,6 +6,12 @@ before_script:
   - psql -c "CREATE USER serler WITH CREATEUSER PASSWORD 'serler';" -U postgres
   - psql -c "ALTER USER serler CREATEDB;" -U postgres
   - psql -c 'create database serler_test_db OWNER serler' -U postgres
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+  - rails s  # start a Web server
+  - sleep 3 # give Web server some time to bind to sockets, etc
+  - curl http://localhost:3000
 script:
   - RAILS_ENV=test rake db:migrate
   - RAILS_ENV=test rake db:seed
