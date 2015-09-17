@@ -13,7 +13,8 @@ before_script:
   - pwd
   - bundle exec rails server -d -e test  # start a Web server
   - sleep 3 # give Web server some time to bind to sockets, etc
-  - curl http://localhost:3000
+  - curl http://localhost:3000/search_fields/list.json
+  - iceweasel http://localhost:3000/search_fields/list.json
 script:
   - RAILS_ENV=test rake db:migrate
   - RAILS_ENV=test rake db:seed
