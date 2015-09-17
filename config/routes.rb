@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
+  devise_for :users
+  # You can have the root of your site routed with "root"
+  root 'welcome#index'
+  # The root page, which is not protected by authentication
+  get 'welcome/index'
+   
+  # REST service to get all the filter fields 
   get 'search_fields/list'
 
-  devise_for :users
+  #sample jquery web page, which has a date selector control 
   get 'welcome/jquery'
 
-  get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
- root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
