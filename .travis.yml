@@ -14,7 +14,7 @@ before_script:
   - bundle exec rails server -d -e test  # start a Web server
   - sleep 3 # give Web server some time to bind to sockets, etc
   - curl http://localhost:3000/search_fields/list.json
-  - firefox http://localhost:3000 &
+  - phantomjs google.js
 script:
   - RAILS_ENV=test rake db:migrate
   - RAILS_ENV=test rake db:seed
